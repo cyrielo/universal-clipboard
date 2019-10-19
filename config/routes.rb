@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resource :clipboard do
     post "copy", to: "clipboard#copy"
   end
+
+  root to: "cliboard#show"
 end
