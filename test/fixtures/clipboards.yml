@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  device_name: MyString
+  is_media: false
+
+two:
+  content: MyString
+  device_name: MyString
+  is_media: false
