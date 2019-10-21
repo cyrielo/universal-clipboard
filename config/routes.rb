@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resource :clipboard do
-    post "copy", to: "clipboard#copy"
-  end
+  resource :clipboard
 
-  root to: "cliboard#show"
+  root to: "clipboards#show"
 end

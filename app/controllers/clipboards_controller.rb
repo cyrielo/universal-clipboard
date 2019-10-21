@@ -1,24 +1,25 @@
 class ClipboardsController < ApplicationController
-  def index
-  end
 
   def show
-    history = Clipboard.history
+    current_user = User.find(clipboard_params[:uid])
+    history = current_user.clipboards || []
     render json: { history: history }, status: :ok
   end
 
-  def copy
-    copy_to_clipboard = Clipboard.copy_to_clipboard(params[:uid, :content])
-    if copy_to_clipboard
+  def create
+    current_user = User.find(clipboard_params[:uid])
+    new_clipboard_params = { content: clipboard_params[:content], device_name: clipboard_params[:device_name] }
+    new_clipboard = current_user.clipboards.new(new_clipboard_params)
+    new_clipboard.save
+    if new_clipboard || new_clipboard.errors[:base] == "Already copied!"
       render json: { message: "copied to clipboard" }, status: 201
     else
-      render json: { message: "Unable to complete request" }, status: 500
+      render json: { message: "Unable to complete request", error: new_clipboard.errors }, status: 500
     end
   end
 
-
-  def params
-    params.permit(:uid, :content, :start, :end)
+  def clipboard_params
+    params.permit(:id, :uid, :content, :device_name, :start, :end)
   end
 
 end
