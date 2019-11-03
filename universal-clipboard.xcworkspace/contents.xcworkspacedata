@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:app">
+   </FileRef>
+   <FileRef
+      location = "group:bin">
+   </FileRef>
+   <FileRef
+      location = "group:config">
+   </FileRef>
+   <FileRef
+      location = "group:config.ru">
+   </FileRef>
+   <FileRef
+      location = "group:db">
+   </FileRef>
+   <FileRef
+      location = "group:Gemfile">
+   </FileRef>
+   <FileRef
+      location = "group:Gemfile.lock">
+   </FileRef>
+   <FileRef
+      location = "group:lib">
+   </FileRef>
+   <FileRef
+      location = "group:log">
+   </FileRef>
+   <FileRef
+      location = "group:package.json">
+   </FileRef>
+   <FileRef
+      location = "group:public">
+   </FileRef>
+   <FileRef
+      location = "group:Rakefile">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:storage">
+   </FileRef>
+   <FileRef
+      location = "group:test">
+   </FileRef>
+   <FileRef
+      location = "group:tmp">
+   </FileRef>
+   <FileRef
+      location = "group:vendor">
+   </FileRef>
+</Workspace>

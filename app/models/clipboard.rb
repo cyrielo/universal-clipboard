@@ -1,4 +1,3 @@
-require 'pry'
 class Clipboard < ApplicationRecord
   belongs_to :user
   before_save :make_recent
@@ -15,9 +14,7 @@ class Clipboard < ApplicationRecord
 
   def make_recent
     if already_copied? && !is_most_recent?
-      temp = self
-      self.destroy
-      temp.save!
+      self.touch(:updated_at)
     elsif already_copied?
       errors.add(:base, "Already copied!")
       throw(:abort)

@@ -2,8 +2,7 @@ class ClipboardsController < ApplicationController
 
   def show
     current_user = User.find(clipboard_params[:uid])
-    history = current_user.clipboards || []
-    render json: { history: history }, status: :ok
+    render json: current_user.clipboards.order(updated_at: :desc), status: :ok
   end
 
   def create
